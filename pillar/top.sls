@@ -1,0 +1,3 @@
+base:
+  '*':
+    - linux_baseline
