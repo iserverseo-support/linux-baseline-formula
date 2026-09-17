@@ -1,0 +1,32 @@
+{% set os_family = grains.get('os_family', 'RedHat') %}
+
+{% set packages = {
+  'RedHat': [
+    'curl',
+    'wget',
+    'vim-enhanced',
+    'git',
+    'rsync',
+    'unzip',
+    'tar',
+    'lsof',
+    'sysstat',
+    'bind-utils',
+    'traceroute'
+  ],
+  'Debian': [
+    'curl',
+    'wget',
+    'vim',
+    'git',
+    'rsync',
+    'unzip',
+    'tar',
+    'lsof',
+    'sysstat',
+    'dnsutils',
+    'traceroute'
+  ]
+} %}
+
+{% set baseline_packages = packages.get(os_family, packages['RedHat']) %}
